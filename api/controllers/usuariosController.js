@@ -26,3 +26,12 @@ exports.login_usuario = function(req, res) {
         }
     });
 }
+
+exports.todos = function(req, res) {
+    Usuario.find({}, function(err, task) {
+      if (err)
+        res.send(err);
+      res.json(task);
+    });
+  };
+  
